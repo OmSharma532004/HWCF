@@ -135,18 +135,18 @@ const Resources = () => {
           <div 
             key={index} 
             ref={(el) => (bookRefs.current[index] = el)} 
-            className="card flex border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[80%] justify-around"
+            className="card flex flex-wrap gap-[40px] border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center md:w-[80%] w-[100%]   justify-around"
           >
             {
                 book.imgSrc&&
                 <div className="bg-pink-500 p-4">
-                <img src={book.imgSrc} alt={book.imgAlt} className="w-[180px]" />
+                <img src={book.imgSrc} alt={book.imgAlt} className="md:w-[180px] w-[100px]" />
               </div>
             }
             <div className="flex items-center justify-center w-[50%]">
               <div className="flex flex-col gap-[10px]">
-                <h1 className="text-pink-200 text-xl font-mono font-extrabold">{book.title}</h1>
-                <p className="text-lg font-semibold text-pink-300">{book.description}</p>
+                <h1 className="text-pink-200 md:text-xl text-lg font-mono font-extrabold">{book.title}</h1>
+                <p className="md:text-lg text-sm font-semibold text-pink-300">{book.description}</p>
                 <a 
                   href={book.amazonLink} 
                   target="_blank" 
@@ -168,11 +168,11 @@ const Resources = () => {
           <div 
             key={index} 
             ref={(el) => (paperRefs.current[index] = el)} 
-            className="card flex border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[80%] justify-around"
+            className="card flex border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center md:w-[80%] w-full justify-around"
           >
             <div className="flex items-center justify-center w-[50%] flex-col gap-[10px]">
-              <h1 className="text-pink-200 text-xl font-mono font-extrabold">{paper.title}</h1>
-              <p className="text-lg font-semibold text-pink-300">{paper.description}</p>
+              <h1 className="text-pink-200 md:text-xl text-lg font-mono font-extrabold">{paper.title}</h1>
+              <p className="md:text-lg text-sm font-semibold text-pink-300">{paper.description}</p>
               <a 
                 href={paper.downloadLink} 
                 target="_blank" 

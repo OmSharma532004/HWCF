@@ -284,61 +284,63 @@ const speakersData2 = [
         };
       }, []);
   
-    return (
-      <div className="flex flex-col items-center bg-pink-300 justify-center gap-6 p-[50px] w-full overflow-y-auto">
-        <h1 className="text-5xl text-violet-950 font-bold font-mono mb-[50px]">Conference Program</h1>
-        <h1 className="text-4xl text-black font-bold font-mono mb-[50px]">Day-1 ,7th November</h1>
-        <div className="w-full flex flex-col items-center justify-center gap-[40px]">
-          {speakersData1.map((session, index) => (
-            <div
-              key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
-              className="card flex flex-wrap gap-[40px] border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[90%] justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
-            >
-              <div className="bg-pink-500 h-[200px] flex flex-col justify-center items-center w-[200px] text-center text-4xl font-mono rounded-xl text-pink-100">
-                <div className="border-4 w-[180px] h-[180px] flex justify-center items-center border-violet-950">{session.time}</div>
-              </div>
-              <div className="flex items-center justify-center w-[50%]">
-                <div className="flex items-center justify-center flex-col gap-[40px]">
-                  <h1 className="text-pink-200 text-2xl font-mono font-extrabold">{session.title}</h1>
-                  <p className="text-xl font-semibold text-pink-300 font-mono">{session.description}</p>
+      return (
+        <div className="flex flex-col items-center bg-pink-300 p-5 justify-center gap-6 md:p-[50px] w-full overflow-y-auto">
+          <h1 className="text-2xl md:text-5xl text-violet-950 font-bold font-mono mb-[50px]">Conference Program</h1>
+          <h1 className="text-xl md:text-4xl text-black font-bold font-mono mb-[50px]">Day-1 ,7th November</h1>
+          <div className="w-full flex flex-col items-center justify-center gap-[40px]">
+            {speakersData1.map((session, index) => (
+              <div
+                key={index}
+                ref={(el) => (cardRefs.current[index] = el)}
+                className="card flex flex-col md:flex-row gap-[40px] border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[90%] lg:justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
+              >
+                <div className="bg-pink-500 md:h-[200px]  h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
+                  <div className="border-4 md:w-[180px] w-[80px] h-[80px] md:h-[180px] flex justify-center items-center border-violet-950">{session.time}</div>
                 </div>
-              </div>
-              {session.imgSrc && (
-                <div className="bg-pink-500 p-4">
-                  <img src={session.imgSrc} alt={session.imgAlt} className="w-[180px]" />
+                <div className="flex items-center justify-center w-full lg:w-[50%]">
+                  <div className="flex flex-col items-center justify-center lg:items-start gap-[40px]">
+                    <h1 className="text-lg lg:text-2xl text-pink-200 font-mono font-extrabold">{session.title}</h1>
+                    <p className=" text-base md:text-xl font-semibold text-pink-300 font-mono">{session.description}</p>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+                {session.imgSrc && (
+                  <div className="bg-pink-500 p-4 w-[70%] lg:w-auto">
+                    <img src={session.imgSrc} alt={session.imgAlt} className="w-full lg:w-[180px]" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <h1 className="text-3xl lg:text-4xl text-black font-bold font-mono mt-[50px] mb-[50px]">Day-2 ,8th November</h1>
+          <div className="w-full flex flex-col items-center justify-center gap-[40px]">
+            {speakersData2.map((session, index) => (
+              <div
+                key={index}
+                ref={(el) => (cardRefs2.current[index] = el)}
+                className="card flex flex-col lg:flex-row gap-[40px] border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[90%] lg:justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
+              >
+                <div className="bg-pink-500 md:h-[200px] flex  h-[100px] w-[100px] flex-col justify-center items-center md:w-[200px] text-center md:text-4 xl text-xlg font-mono rounded-xl text-pink-100">
+                  <div className="border-4 md:w-[180px] md:h-[180px]  h-[80px] w-[80px] flex justify-center items-center border-violet-950">{session.time}</div>
+                </div>
+                <div className="flex items-center justify-center w-full lg:w-[50%]">
+                  <div className="flex flex-col items-center justify-center lg:items-start gap-[40px]">
+                    <h1 className="text-lg md:text-2xl text-pink-200 font-mono font-extrabold">{session.title}</h1>
+                    <p className="text-base md:text-xl font-semibold text-pink-300 font-mono">{session.description}</p>
+                  </div>
+                </div>
+                {session.imgSrc && (
+                  <div className="bg-pink-500 p-4 w-[70%] md:w-auto">
+                    <img src={session.imgSrc} alt={session.imgAlt} className="w-full md:w-[180px]" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-        <h1 className="text-4xl text-black font-bold font-mono mt-[50px] mb-[50px]">Day-2 ,8th November</h1>
-        <div className="w-full flex flex-col items-center justify-center gap-[40px]">
-          {speakersData2.map((session, index) => (
-            <div
-              key={index}
-              ref={(el) => (cardRefs2.current[index] = el)}
-              className="card flex flex-wrap gap-[40px] border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[90%] justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
-            >
-              <div className="bg-pink-500 h-[200px] flex flex-col justify-center items-center w-[200px] text-center text-4xl font-mono rounded-xl text-pink-100">
-                <div className="border-4 w-[180px] h-[180px] flex justify-center items-center border-violet-950">{session.time}</div>
-              </div>
-              <div className="flex items-center justify-center w-[50%]">
-                <div className="flex items-center justify-center flex-col gap-[40px]">
-                  <h1 className="text-pink-200 text-2xl font-mono font-extrabold">{session.title}</h1>
-                  <p className="text-xl font-semibold text-pink-300 font-mono">{session.description}</p>
-                </div>
-              </div>
-              {session.imgSrc && (
-                <div className="bg-pink-500 p-4">
-                  <img src={session.imgSrc} alt={session.imgAlt} className="w-[180px]" />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
+      );
+      
+      
   };
   
   
