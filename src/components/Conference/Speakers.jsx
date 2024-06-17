@@ -18,6 +18,7 @@ import Tatiana from "../../assets/Events/Conference/Tatiana.png";
 import Maggie from "../../assets/Events/Conference/Maggie.png";
 import Bergsveinn from "../../assets/Events/Conference/Bergsveinn.png";
 import Tim from "../../assets/Events/Conference/Tim.png";
+import Jonathan from "../../assets/Events/Conference/Jonathan.png";
 
 
 const speakersData1 = [
@@ -132,7 +133,7 @@ const speakersData2 = [
       time: "10:00",
       title: "Conference welcome - Prof Jonathan Passmore",
       description: "Prof Passmore is Professor of Coaching at Henley Business School and Senior Vice President EZRA Coaching. He is the joint editor of ‘The Health & Wellbeing Coaches’ Handbook’ and author and editor of 40 other book titles, as well as contributing more than 250 peer review journal papers and book chapters to the field of coaching.",
-      imgSrc: "path_to_image_of_jonathan_passmore",
+      imgSrc: Jonathan,
       imgAlt: "Prof Jonathan Passmore"
     },
     {
