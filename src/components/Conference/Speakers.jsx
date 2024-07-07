@@ -296,9 +296,15 @@ const speakersData2 = [
                 ref={(el) => (cardRefs.current[index] = el)}
                 className="card flex flex-col md:flex-row gap-[40px] border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[90%] lg:justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
               >
+                <div className=" flex flex-col items-center justify-center ">
                 <div className="bg-pink-500 md:h-[200px]  h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
-                  <div className="border-4 md:w-[180px] w-[80px] h-[80px] md:h-[180px] flex justify-center items-center border-violet-950">{session.time}</div>
+                  <div className="border-4 relative md:w-[180px] w-[80px] h-[80px] md:h-[180px] flex flex-col justify-center items-center border-violet-950">{session.time} </div>
+                
                 </div>
+                <div className=" text-white">
+                  UKI
+                  </div>
+                  </div>
                 <div className="flex items-center justify-center w-full lg:w-[50%]">
                   <div className="flex flex-col items-center justify-center lg:items-start gap-[40px]">
                     <h1 className="text-lg lg:text-2xl text-pink-200 font-mono font-extrabold">{session.title}</h1>
@@ -313,7 +319,7 @@ const speakersData2 = [
               </div>
             ))}
           </div>
-          <h1 className="text-3xl lg:text-4xl text-black font-bold font-mono mt-[50px] mb-[50px]">Day-2 ,8th November</h1>
+          <h1 className="text-xl lg:text-4xl text-black font-bold font-mono mt-[50px] mb-[50px]">Day-2 ,8th November</h1>
           <div className="w-full flex flex-col items-center justify-center gap-[40px]">
             {speakersData2.map((session, index) => (
               <div
@@ -321,9 +327,15 @@ const speakersData2 = [
                 ref={(el) => (cardRefs2.current[index] = el)}
                 className="card flex flex-col lg:flex-row gap-[40px] border-4 bg-violet-950 rounded-xl border-violet-950 p-4 items-center w-[90%] lg:justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
               >
-                <div className="bg-pink-500 md:h-[200px] flex  h-[100px] w-[100px] flex-col justify-center items-center md:w-[200px] text-center md:text-4 xl text-xlg font-mono rounded-xl text-pink-100">
-                  <div className="border-4 md:w-[180px] md:h-[180px]  h-[80px] w-[80px] flex justify-center items-center border-violet-950">{session.time}</div>
+                 <div className=" flex flex-col items-center justify-center ">
+                <div className="bg-pink-500 md:h-[200px]  h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
+                  <div className="border-4 relative md:w-[180px] w-[80px] h-[80px] md:h-[180px] flex flex-col justify-center items-center border-violet-950">{session.time} </div>
+                
                 </div>
+                <div className=" text-white">
+                  UKI
+                  </div>
+                  </div>
                 <div className="flex items-center justify-center w-full lg:w-[50%]">
                   <div className="flex flex-col items-center justify-center lg:items-start gap-[40px]">
                     <h1 className="text-lg md:text-2xl text-pink-200 font-mono font-extrabold">{session.title}</h1>

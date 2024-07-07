@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Events from './pages/Events'
 import Conference from './pages/Event/Conference'
 import Resources from './pages/Books'
+import ConferenceFee from './components/Conference/Fee'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ function App() {
       <Route path="/conference" element={<Conference/>} />
       <Route path="*" element={<div>404</div>} />
       <Route path="/resources" element={<Resources/>} />
+      <Route path="/checkout" element={<ConferenceFee/>} />
     </Routes>
      
     </>

@@ -15,8 +15,7 @@ const HeroSection = () => {
           </p>
         </div>
         <p className="text-white w-full md:w-[60vw] font-serif mt-5 tracking-wide text-base md:text-xl text-center px-6 md:px-10">
-          The Health & Wellbeing Coaching Forum (HWCF) aims to bring together private, public and not for profit bodies across the sector, from health care providers, wellbeing services, coaching services, clinicians and carers, and those providing coaching services in the field, with the aim of advancing the science and practice of health and wellbeing coaching.
-        </p>
+        The Health & Wellbeing Coaching Forum (HWCF) aims to bring together private, public and not for profit bodies across the health and wellbeing sector, from health care providers, wellbeing services, clinicians, service users and carers, and those providing coaching services, with the aim of advancing the science and practice of health and wellbeing coaching. </p>
       </div>
     </div>
   );

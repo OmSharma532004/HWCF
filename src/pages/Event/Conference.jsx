@@ -1,66 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 import Speakers from '../../components/Conference/Speakers';
+import CheckoutForm from './CheckoutForm';
+import { Link } from 'react-router-dom';
+
+// Initialize Stripe
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const Conference = () => {
   const { ref: headerRef, inView: headerInView } = useInView({ triggerOnce: true });
   const { ref: paragraph1Ref, inView: paragraph1InView } = useInView({ triggerOnce: true });
   const { ref: paragraph2Ref, inView: paragraph2InView } = useInView({ triggerOnce: true });
   const { ref: speakersRef, inView: speakersInView } = useInView({ triggerOnce: true });
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  const handlePayment = async () => {
-    try {
-      const response = await fetch('http://localhost:3000/create-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          amount: 1000, // amount in INR, 1000 paise = 10 INR
-          currency: 'INR',
-          receipt: 'receipt#1'
-        }),
-      });
-      const order = await response.json();
-
-      const options = {
-        key: 'rzp_test_L2xGUPd25MH4Rj', // replace with your Razorpay key ID
-        amount: order.amount,
-        currency: order.currency,
-        name: 'Your Company Name',
-        description: 'Conference Registration Fee',
-        image: 'https://your-logo-url.com/logo.png',
-        order_id: order.id,
-        handler: function (response) {
-          alert('Payment successful');
-          // You can handle the response further as needed
-        },
-        prefill: {
-          name: 'John Doe', // Replace with actual user data
-          email: 'john.doe@example.com', // Replace with actual user data
-          contact: '9999999999', // Replace with actual user data
-        },
-        theme: {
-          color: '#F37254',
-        },
-      };
-      const rzp1 = new Razorpay(options);
-      rzp1.open();
-    } catch (error) {
-      console.error('Error creating order:', error);
-      alert('Failed to initiate payment. Please try again.');
-    }
-  };
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   return (
     <div className='w-full flex flex-col gap-10 items-center justify-center bg-violet-950 px-4 md:px-8'>
@@ -94,12 +48,10 @@ const Conference = () => {
       >
         <Speakers />
       </div>
-      <button
-        onClick={handlePayment}
-        className='bg-pink-500 text-white font-bold py-2 px-4 rounded mt-8'
-      >
-        Pay for Conference
-      </button>
+      <div className=' flex flex-col items-center mb-8 justify-center m-5'>
+       <Link to='/checkout' className=' hover:bg-pink-500  p-4 rounded-xl text-violet-950 font-semibold font-serif text-lg bg-pink-400'>Conference Fee </Link>
+
+      </div>
     </div>
   );
 };
