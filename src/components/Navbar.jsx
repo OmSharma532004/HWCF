@@ -25,7 +25,7 @@ const Navbar = () => {
                 </button>
                 <div className="hidden md:flex pr-8 text-sm">
                     <Link to="/" className="p-4">Home</Link>
-                    <Link to="/event" className="p-4">Event</Link>
+                    <Link to="/event" className="p-4">Events</Link>
                     <Link to="/conference" className="p-4">Conference</Link>
                     <Link to="/resources" className="p-4">Resources</Link>
                 </div>

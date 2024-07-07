@@ -3,13 +3,14 @@ import React, { useEffect, useRef } from "react";
 import book2 from "../assets/Books/book2.png";
 import book3 from "../assets/Books/book3.png";
 import book4 from "../assets/Books/book4.png";
+import book from "../assets/Books/book.png";
 // Ensure animations.css file is imported
 
 const bookData = [
     {
       title: "The Health & Wellbeing Coaches Handbook",
       description: "The definitive guide for health and wellbeing coaches, covering essential practices and insights from experts in the field.",
-      imgSrc: "",
+      imgSrc: book,
       amazonLink: "https://www.amazon.co.uk/Health-Wellbeing-Coaches-Handbook/dp/...",
     },
     {
