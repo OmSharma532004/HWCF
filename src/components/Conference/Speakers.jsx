@@ -27,7 +27,7 @@ const speakersData1 = [
   {
     time: "10:00-10:10",
     title: "Conference welcome: Dr Badri Bajaj",
-    description: "Dr Badri Bajaj is an Indian researcher, writer, academic and coach. He has served as President of the ICF Delhi Chapter, and he is the joint editor of The Health & Wellbeing Coaches Handbook.",
+    description: "Dr Badri Bajaj is an Indian researcher, writer, academic and coach.He has served as President of the ICF Delhi Chapter,and he is the joint editor of The Health & Wellbeing Coaches Handbook.",
     imgSrc: badri,
     imgAlt: "Dr Badri Bajaj"
   },
@@ -47,7 +47,7 @@ const speakersData1 = [
   {
     time: "11:15-12:00",
     title: "Panel session 1: Health Coaching a practitioner perspective",
-    description: "Moderator: Dr Jolanta Burke. Panel members: Penny Newman, Health Coach; Maria O’Kane, Chief Executive, Southern Health & Social Care Trust, Ireland.",
+    description: "Moderator: Dr Jolanta Burke. <br>Panel members: Penny Newman, Health Coach; Maria O’Kane, Chief Executive, Southern Health & Social Care Trust, Ireland.",
     imgSrc: Jolanta,
     imgAlt: "Dr Jolanta Burke"
   },
@@ -66,7 +66,8 @@ const speakersData1 = [
   {
     time: "13:30-14:00",
     title: "Keynote 4: Coaching for oral health - Dr Ciara Scott",
-    description: "",
+    description: "In this session Dr Scott will explore what has historically been viewed as the Cinderella of health services’ Oral health. More recently enhancing oral health is now acknowledged as a cornerstone in chronic disease prevention and positive health practices. The session will explore the role of coaching in this paradigm shift, both in clinical and coaching settings.",
+    imgSrc: Ciara,
     imgAlt: "Dr Ciara Scott"
   },
   {
@@ -84,7 +85,7 @@ const speakersData1 = [
   {
     time: "14:45-15:30",
     title: "Panel 2: Health care coaching",
-    description: "Moderator: Cynthia Stuckley, EZRA Coaching. Panel members: Gina Thoebes, Cleveland Clinic; Steve Gibbons, Intermountain Health; Karen Mellum, HR Director Mayo Clinic.",
+    description: "Moderator: Cynthia Stuckley, EZRA Coaching. Panel members: Gina Thoebes, Cleveland Clinic; Steve Gibbons, Intermountain Health; Karen Mellum, HR Director Mayo Clinic. This session will explore how health providers are leveraging the power of coaching for employee wellbeing as well as improving patient outcomes.",
     imgSrc: Cynthia,
     imgAlt: "Cynthia Stuckley"
   },
@@ -157,8 +158,8 @@ const speakersData2 = [
   },
   {
     time: "11:00-12:00",
-    title: "Panel session 1: Wellbeing through coaching",
-    description: "Moderator: Dr Andrea Hayes Giraldes. Panel members: Neal Sundberg, Headspace; Jordan Rodgers, EZRA Coaching.",
+    title: "Panel session 1: Wellbeing through coaching.",
+    description: " Moderator: Dr Andrea Hayes Giraldes.<br>Panel members: Neal Sundberg, Headspace; Jordan Rodgers, EZRA Coaching.",
     imgAlt: "Dr Andrea Hayes Giraldes"
   },
   {
@@ -303,38 +304,40 @@ const speakersData2 = [
       return (
         <div className="flex flex-col items-center bg-pink-300 p-5 justify-center gap-6 md:p-[50px] w-full overflow-y-auto">
           <h1 className="text-2xl md:text-5xl text-violet-950 font-bold font-mono mb-[50px]">Conference Program</h1>
-          <h1 className="text-xl md:text-4xl text-black font-bold font-mono mb-[50px]">Day-1 ,7th November</h1>
+          <h1 className="text-xl md:text-4xl text-black font-bold font-mono mb-[50px]">Day 1 : November 7th,  2024 </h1>
           <div className="w-full flex flex-col items-center justify-center gap-[40px]">
-            {speakersData1.map((session, index) => (
-              <div
-                key={index}
-                ref={(el) => (cardRefs.current[index] = el)}
-                className="card flex flex-col md:flex-row gap-[40px] border-4  bg-pink-200 rounded-xl border-violet-950 p-4 items-center w-[90%] lg:justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
-              >
-                <div className=" flex flex-col items-center justify-center ">
-                <div className="bg-purple-950 md:h-[200px]  h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
-                  <div className="border-4 relative md:w-[180px] w-[90px] h-[90px] md:h-[180px] flex flex-col justify-around items-center border-violet-950">{session.time}  <div className=" text-white text-sm ">
-                  UKT
-                  </div> </div>
-                 
-                </div>
-               
-                  </div>
-                <div className="flex items-center justify-center w-full lg:w-[50%]">
-                  <div className="flex flex-col items-center justify-center lg:items-start gap-[40px]">
-                    <h1 className="text-lg lg:text-2xl text-purple-950 font-mono font-extrabold">{session.title}</h1>
-                    <p className=" text-base md:text-xl font-semibold text-purple-900 font-mono">{session.description}</p>
-                  </div>
-                </div>
-                {session.imgSrc && (
-                  <div className="bg-purple-950 p-4 w-[70%] lg:w-auto">
-                    <img src={session.imgSrc} alt={session.imgAlt} className="w-full lg:w-[180px]" />
-                  </div>
-                )}
-              </div>
-            ))}
+          {speakersData1.map((session, index) => (
+  <div
+    key={index}
+    ref={(el) => (cardRefs.current[index] = el)}
+    className="card flex flex-col md:flex-row gap-[40px] border-4 bg-pink-200 rounded-xl border-violet-950 p-4 items-center w-[90%] lg:justify-around opacity-0 transition-opacity duration-1000 ease-in-out transform translate-y-10"
+  >
+    <div className="flex flex-col items-center justify-center">
+      <div className="bg-purple-950 md:h-[200px] h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
+        <div className="border-4 relative md:w-[180px] w-[90px] h-[90px] md:h-[180px] flex flex-col justify-around items-center border-violet-950">
+          {session.time}
+          <div className="text-white md:text-xl text-sm">UKT</div>
+        </div>
+      </div>
+    </div>
+    <div className="flex items-center justify-center w-full lg:w-[50%]">
+      <div className="flex flex-col items-center justify-center lg:items-start gap-[40px]">
+        <h1 className="text-lg lg:text-2xl text-purple-950 font-mono font-extrabold">{session.title}</h1>
+        <p
+          className="text-base md:text-xl font-semibold text-purple-900 font-mono"
+          dangerouslySetInnerHTML={{ __html: session.description }}
+        ></p>
+      </div>
+    </div>
+    {session.imgSrc && (
+      <div className="bg-purple-950 p-4 w-[70%] lg:w-auto">
+        <img src={session.imgSrc} alt={session.imgAlt} className="w-full lg:w-[180px]" />
+      </div>
+    )}
+  </div>
+))}
           </div>
-          <h1 className="text-xl lg:text-4xl text-black font-bold font-mono mt-[50px] mb-[50px]">Day-2 ,8th November</h1>
+          <h1 className="text-xl lg:text-4xl text-black font-bold font-mono mt-[50px] mb-[50px]">Day 2: November 8th, 2024 </h1>
           <div className="w-full flex flex-col items-center justify-center gap-[40px]">
             {speakersData2.map((session, index) => (
               <div
@@ -344,7 +347,7 @@ const speakersData2 = [
               >
                  <div className=" flex flex-col items-center justify-center ">
                 <div className=" bg-purple-950 md:h-[200px]  h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
-                  <div className="border-4 relative md:w-[180px] w-[90px] h-[90px] md:h-[180px]  flex flex-col justify-around items-center border-violet-950">{session.time}  <div className=" text-white text-sm">
+                  <div className="border-4 relative md:w-[180px] w-[90px] h-[90px] md:h-[180px]  flex flex-col justify-around items-center border-violet-950">{session.time}  <div className=" text-white md:text-xl text-sm">
                   UKT
                   </div> </div>
                 
@@ -354,8 +357,10 @@ const speakersData2 = [
                 <div className="flex items-center justify-center w-full lg:w-[50%]">
                   <div className="flex flex-col items-center justify-center lg:items-start gap-[40px]">
                     <h1 className="text-lg md:text-2xl text-purple-950 font-mono font-extrabold">{session.title}</h1>
-                    <p className="text-base md:text-xl font-semibold text-purple-900 font-mono">{session.description}</p>
-                  </div>
+                    <p
+          className="text-base md:text-xl font-semibold text-purple-900 font-mono"
+          dangerouslySetInnerHTML={{ __html: session.description }}
+        ></p> </div>
                 </div>
                 {session.imgSrc && (
                   <div className="bg-purple-950 p-4 w-[70%] md:w-auto">

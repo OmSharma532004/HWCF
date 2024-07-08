@@ -4,6 +4,10 @@ import book2 from "../assets/Books/book2.png";
 import book3 from "../assets/Books/book3.png";
 import book4 from "../assets/Books/book4.png";
 import book from "../assets/Books/book.png";
+import book5 from "../assets/Books/book5.png";
+import book6 from "../assets/Books/book6.png";
+import book7 from "../assets/Books/book7.png";
+import book8 from "../assets/Books/book8.png";
 // Ensure animations.css file is imported
 
 const bookData = [
@@ -34,25 +38,25 @@ const bookData = [
     {
       title: "Health Coaching Tips and Case Studies",
       description: "A practical guide featuring tips and real-life case studies for health coaches, providing actionable insights for coaching success.",
-      imgSrc: "",
+      imgSrc: book5,
       amazonLink: "https://www.amazon.co.uk/Health-Coaching-Tips-Case-Studies/dp/...",
     },
     {
       title: "How to Be a Health Coach",
       description: "An introductory guide for aspiring health coaches, covering essential skills and knowledge required to excel in the field.",
-      imgSrc: "",
+      imgSrc: book6,
       amazonLink: "https://www.amazon.co.uk/How-Be-Health-Coach/dp/...",
     },
     {
       title: "Integrative Wellness Coaching",
       description: "This book explores integrative approaches to wellness coaching, blending traditional and complementary practices for holistic health.",
-      imgSrc: "",
+      imgSrc: book7,
       amazonLink: "https://www.amazon.co.uk/Integrative-Wellness-Coaching-Singing-Dragon/dp/...",
     },
     {
       title: "Coaching Skills for Healthcare Professionals",
       description: "Develop essential coaching skills tailored for healthcare professionals, enhancing patient engagement and care outcomes.",
-      imgSrc: "",
+      imgSrc: book8,
       amazonLink: "https://www.amazon.co.uk/Coaching-Skills-Healthcare-Professionals-CreateSpace-Independent/dp/...",
     },
   ];
@@ -148,14 +152,14 @@ const Resources = () => {
               <div className="flex flex-col gap-[10px]">
                 <h1 className="text-pink-200 md:text-xl text-lg font-mono font-extrabold">{book.title}</h1>
                 <p className="md:text-lg text-sm font-semibold text-pink-300">{book.description}</p>
-                <a 
+                {/* <a 
                   href={book.amazonLink} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className=" bg-pink-200 flex items-center justify-center w-[100px] mt-[40px] p-4 font-serif  rounded-xl hover:bg-pink-400"
                 >
                   Buy Now
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -180,7 +184,7 @@ const Resources = () => {
                 rel="noopener noreferrer" 
                 className=" bg-pink-200 flex items-center justify-center w-[100px] mt-[40px] p-4 font-serif  rounded-xl hover:bg-pink-400"
               >
-                Download 
+                Access
               </a>
             </div>
           </div>

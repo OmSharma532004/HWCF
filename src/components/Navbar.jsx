@@ -38,7 +38,7 @@ const Navbar = () => {
                     <div className="fixed top-0 right-0 w-1/2 h-full bg-[#9e5c85] text-white p-4 z-50">
                         <ul className="flex flex-col gap-4">
                             <Link to="/" onClick={closeMenu}>Home</Link>
-                            <Link to="/event" onClick={closeMenu}>Event</Link>
+                            <Link to="/event" onClick={closeMenu}>Events</Link>
                             <Link to="/conference" onClick={closeMenu}  >Conference</Link>
                             <Link to="/resources" onClick={closeMenu}>Resources</Link>
                         </ul>
