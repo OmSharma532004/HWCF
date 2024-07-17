@@ -17,6 +17,12 @@ function App() {
     <>
     <div className=' w-[100%]'>
     <Navbar />
+    {/* Add a contact email at right side */}
+    <div>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Info@healthandwellbeingcoachingforum.com" className="text-white bg-purple-800 z-10 md:bottom-[250px] bottom-[50px] p-5 rounded-lg right-0 fixed r text-lg font-bold" target="_blank">
+    Contact Us
+  </a>
+</div>
     </div>
     <Routes>
       <Route path="/" element={<Home />} />
