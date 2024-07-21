@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import logo from '../assets/logo.png';
+import logo2 from '../assets/logo2.png';
 
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -18,8 +20,11 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="flex justify-between items-center h-16 bg-[#9e5c85] text-white shadow-sm font-mono w-screen p-6">
-                <Link to="/" className="pl-8 text-2xl font-bold">H W C F</Link>
+            <nav className="flex justify-between items-center  bg-[#995a81] text-white shadow-sm font-mono w-screen p-2 ">
+                <Link to="/" className="pl-8 text-2xl font-bold">
+                    <img src={logo} alt="logo" className="w-[120px] h-[100px]" />
+              
+                </Link>
                 <button className="md:hidden text-2xl" onClick={toggleMenu}>
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </button>

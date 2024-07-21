@@ -4,12 +4,14 @@ import { useInView } from 'react-intersection-observer';
 import HeroSection from '../components/HomePage/heroSection';
 import Section1 from '../components/HomePage/section1';
 import Section2 from '../components/HomePage/section2';
+import Footer from '../components/HomePage/Footer';
 
 
 const Home = () => {
   const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true });
   const { ref: section1Ref, inView: section1InView } = useInView({ triggerOnce: true });
   const { ref: section2Ref, inView: section2InView } = useInView({ triggerOnce: true });
+  const { ref: footerRef, inView: footerInView } = useInView({ triggerOnce: true });
 
   return (
     <div>
@@ -21,6 +23,9 @@ const Home = () => {
       </div>
       <div ref={section2Ref} className={`section ${section2InView ? 'visible' : ''}`}>
         <Section2 />
+      </div>
+     <div ref={footerRef} className={`section ${footerInView ? 'visible' : ''}`}>
+        <Footer/>
       </div>
     </div>
   );

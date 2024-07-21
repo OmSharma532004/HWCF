@@ -21,20 +21,24 @@ import Tim from "../../assets/Events/Conference/Tim.png";
 import Jonathan from "../../assets/Events/Conference/Jonathan.png";
 import Jolanta from "../../assets/Events/Conference/Jolanta.jpeg";
 import Richard from "../../assets/Events/Conference/Richard.png";
+import Naeema from "../../assets/Events/Conference/Naeema.png";
+import FirstKeyNote from "../../assets/Events/Conference/FirstKeyNote.png";
+import Adrea from "../../assets/Events/Conference/Adrea.png";
 
 
 const speakersData1 = [
   {
     time: "10:00-10:10",
-    title: "Conference welcome: Dr Badri Bajaj",
-    description: "Dr Badri Bajaj is an Indian researcher, writer, academic and coach.He has served as President of the ICF Delhi Chapter,and he is the joint editor of The Health & Wellbeing Coaches Handbook.",
-    imgSrc: badri,
-    imgAlt: "Dr Badri Bajaj"
+    title: "Conference welcome: Prof Jonathan Passmore",
+    description:"Prof Passmore is Professor of Coaching at Henley Business School and Senior Vice President EZRA Coaching. He is the joint editor of ‘The Health & Wellbeing Coaches’ Handbook’ and author and editor of 40 other book titles, as well as contributing more than 250 peer review journal papers and book chapters to the field of coaching.",
+    imgSrc: Jonathan,
+    imgAlt: "Prof Jonathan Passmore"
   },
   {
     time: "10:10-10:40",
     title: "Keynote 1: Positive Psychology Coaching for health & wellbeing - Prof Christian van Nieuwerburgh",
     description: "",
+    imgSrc: FirstKeyNote,
     imgAlt: "Prof Christian van Nieuwerburgh"
   },
   {
@@ -143,11 +147,11 @@ const speakersData1 = [
 
 const speakersData2 = [
   {
-    time: "10:00",
-    title: "Conference welcome - Prof Jonathan Passmore",
-    description: "Prof Passmore is Professor of Coaching at Henley Business School and Senior Vice President EZRA Coaching. He is the joint editor of ‘The Health & Wellbeing Coaches’ Handbook’ and author and editor of 40 other book titles, as well as contributing more than 250 peer review journal papers and book chapters to the field of coaching.",
-    imgSrc: Jonathan,
-    imgAlt: "Prof Jonathan Passmore"
+    time: "10:00-10:15",
+    title: "Conference welcome: Dr Badri Bajaj",
+    description: "Dr. Bajaj is an Associate Professor at Jaypee Institute of Information Technology.He has served as President of the ICF Delhi Chapter,and he is the joint editor of The Health & Wellbeing Coaches Handbook.",
+    imgSrc: badri,
+    imgAlt: "Dr Badri Bajaj"
   },
   {
     time: "10:15-11:00",
@@ -156,10 +160,12 @@ const speakersData2 = [
     imgSrc: Lindsay,
     imgAlt: "Prof Lindsay G. Oades"
   },
+ 
   {
     time: "11:00-12:00",
     title: "Panel session 1: Wellbeing through coaching.",
     description: " Moderator: Dr Andrea Hayes Giraldes.<br>Panel members: Neal Sundberg, Headspace; Jordan Rodgers, EZRA Coaching.",
+    imgSrc: Adrea,
     imgAlt: "Dr Andrea Hayes Giraldes"
   },
   {
@@ -197,6 +203,7 @@ const speakersData2 = [
     time: "14:45-15:30",
     title: "Panel 2: Wellbeing programs in the workplace",
     description: "Moderator: Dr Naeema Pasha. 3x Wellbeing commentators.",
+    imgSrc: Naeema,
     imgAlt: "Dr Naeema Pasha"
   },
   {

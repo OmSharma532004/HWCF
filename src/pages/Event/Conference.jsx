@@ -5,6 +5,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import Speakers from '../../components/Conference/Speakers';
 import CheckoutForm from './CheckoutForm';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/HomePage/Footer';
 
 // Initialize Stripe
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
@@ -52,6 +53,10 @@ const Conference = () => {
        <Link to='/checkout' className=' hover:bg-pink-500  p-4 rounded-xl text-violet-950 font-semibold font-serif text-lg bg-pink-400'>Conference Fee </Link>
 
       </div>
+      <div className=' '>
+    <Footer/>
+
+    </div>
     </div>
   );
 };

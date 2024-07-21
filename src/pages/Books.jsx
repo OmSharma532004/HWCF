@@ -8,6 +8,7 @@ import book5 from "../assets/Books/book5.png";
 import book6 from "../assets/Books/book6.png";
 import book7 from "../assets/Books/book7.png";
 import book8 from "../assets/Books/book8.png";
+import Footer from "../components/HomePage/Footer";
 // Ensure animations.css file is imported
 
 const bookData = [
@@ -190,6 +191,7 @@ const Resources = () => {
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };

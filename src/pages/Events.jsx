@@ -5,6 +5,7 @@ import Webinars from '../components/Events/Webinars';
 import HeroSectionEvent from '../components/Events/HeroEvent';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import Footer from '../components/HomePage/Footer';
 
 const Events = () => {
     const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true });
@@ -35,7 +36,10 @@ The event is priced at US $75 for this two day event. An early bird fee of US $6
 
         </div>
         <Webinars/>
+    <div className=' bg-white -mt-[50px]'>
+    <Footer/>
 
+    </div>
 
         
         </div>
