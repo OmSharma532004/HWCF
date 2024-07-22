@@ -96,9 +96,17 @@ const Footer = () => {
             <div className='flex items-center justify-center flex-col'>
               <h3 className='text-xl font-bold mb-4'>Policies</h3>
               <ul className='flex items-center justify-center flex-col'>
-                <li><a href="../../../public/Policy.pdf" target="_blank" className="hover:underline">Privacy Policy</a></li>
-                <li><a href="../../../public/Policy2.pdf" target="_blank" className="hover:underline">Disclaimer Policy</a></li>
-                <li><a href="../../../public/Policy3.pdf" target="_blank" className="hover:underline">Refund Policy</a></li>
+                <li onClick={()=>{
+                  window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721675262/Policy_c8qhwb.pdf'
+                }} className="hover:underline">Privacy Policy</li>
+                <li  onClick={()=>{
+                  window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721675262/Policy2_lgvadx.pdf'
+                }}
+                 className="hover:underline">Disclaimer Policy</li>
+                <li  onClick={()=>{
+                  window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721675262/Policy3_ipojgz.pdf'
+                }}
+                 className="hover:underline">Refund Policy</li>
               </ul>
             </div>
           </div>
