@@ -148,8 +148,8 @@ const speakersData1 = [
 const speakersData2 = [
   {
     time: "10:00-10:15",
-    title: "Conference welcome: Dr Badri Bajaj",
-    description: "Dr. Bajaj is an Associate Professor at Jaypee Institute of Information Technology.He has served as President of the ICF Delhi Chapter,and he is the joint editor of The Health & Wellbeing Coaches Handbook.",
+    title: "Health and wellbeing- Indian Perspective:Dr Badri Bajaj",
+    description: "Dr Badri Bajaj  is an Indian researcher, writer, academic and coach. He has served as President of the ICF Delhi Chapter, and he is the joint editor of The Health & Wellbeing Coaches Handbook     ",
     imgSrc: badri,
     imgAlt: "Dr Badri Bajaj"
   },
@@ -327,7 +327,7 @@ const speakersData2 = [
                   <div className="bg-purple-950 md:h-[200px] h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
                     <div className="border-4 relative md:w-[180px] w-[90px] h-[90px] md:h-[180px] flex flex-col justify-around items-center border-violet-950">
                       {session.time}
-                      <div className="text-white md:text-xl text-sm">UKT</div>
+                      <div className="text-white md:text-xl text-sm">UKI</div>
                     </div>
                   </div>
                 </div>
@@ -366,7 +366,7 @@ const speakersData2 = [
                   <div className="bg-purple-950 md:h-[200px] h-[100px] w-[100px] flex flex-col justify-center items-center md:w-[200px] text-center text-lg md:text-4xl font-mono rounded-xl text-pink-100">
                     <div className="border-4 relative md:w-[180px] w-[90px] h-[90px] md:h-[180px] flex flex-col justify-around items-center border-violet-950">
                       {session.time}
-                      <div className="text-white md:text-xl text-sm">UKT</div>
+                      <div className="text-white md:text-xl text-sm">UKI</div>
                     </div>
                   </div>
                 </div>
