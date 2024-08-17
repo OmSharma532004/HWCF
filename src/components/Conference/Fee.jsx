@@ -26,7 +26,7 @@ const ConferenceFee = () => {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="">
           <p className="text-lg sm:text-xl text-purple-900">
             To reserve your place at the conference:
             <a
@@ -37,6 +37,11 @@ const ConferenceFee = () => {
             >
               Book Here
             </a>
+          </p>
+        </div>
+        <div>
+          <p className="text-lg sm:text-xl text-purple-900">
+          The link to join the conference will be sent to your registered email address 24 to 48 hours before the event. Thank you 
           </p>
         </div>
       </div>

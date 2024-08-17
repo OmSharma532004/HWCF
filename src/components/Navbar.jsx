@@ -28,6 +28,19 @@ const Navbar = () => {
                 <button className="md:hidden text-2xl" onClick={toggleMenu}>
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </button>
+               {
+                window.location.pathname === '/conference' ? (<>
+                 <div className=' hidden md:flex lg:flex ml-[180px] '>
+                    <button
+                    onClick={()=>{
+                        window.location.href='/checkout'
+                    }}
+                     className=' bg-purple-950 text-white p-3 rounded-xl font-bold'>
+                        Book Your Place
+                    </button>
+                </div>
+                </>):(<></>)
+               }
                 <div className="hidden md:flex pr-8 text-sm">
                     <Link to="/" className="p-4">Home</Link>
                     <Link to="/event" className="p-4">Events</Link>

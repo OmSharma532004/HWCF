@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HiOutlineMail } from "react-icons/hi";
 import emailjs from 'emailjs-com';
@@ -7,12 +7,84 @@ import logo2 from '../../assets/logo2.png';
 import logo3 from '../../assets/logo3.png';
 import logo4 from '../../assets/logo4.png';
 
+// CAPTCHA component
+const Captcha = ({ onChange, refreshCaptcha }) => {
+  const [captchaText, setCaptchaText] = useState('');
+  const canvasRef = useRef(null);
+
+  const generateCaptchaText = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let text = '';
+    for (let i = 0; i < 6; i++) {
+      text += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return text;
+  };
+
+  const drawCaptcha = (text) => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+
+    // Clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Background color
+    ctx.fillStyle = '#f2f2f2';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Text color and font
+    ctx.font = '28px Arial';
+    ctx.fillStyle = '#000';
+    ctx.setTransform(1, Math.random() * 0.2, Math.random() * 0.2, 1, 0, 0);
+
+    // Draw the text
+    ctx.fillText(text, 10, 30);
+
+    // Add some random lines for distraction
+    for (let i = 0; i < 5; i++) {
+      ctx.strokeStyle = `rgba(0, 0, 0, ${Math.random()})`;
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.stroke();
+    }
+  };
+
+  useEffect(() => {
+    const newCaptchaText = generateCaptchaText();
+    setCaptchaText(newCaptchaText);
+    drawCaptcha(newCaptchaText);
+  }, [refreshCaptcha]);
+
+  return (
+    <div className=' flex flex-col gap-5 items-center justify-center'>
+      <canvas ref={canvasRef} width="200" height="50"></canvas>
+      
+      <input
+        type="text"
+        placeholder="Enter the text"
+        className='text-black'
+        onChange={(e) => onChange(e.target.value, captchaText)}
+      />
+      <button className=' bg-white text-purple-950 p-2 rounded-lg' onClick={() => {
+        const newCaptchaText = generateCaptchaText();
+        setCaptchaText(newCaptchaText);
+        drawCaptcha(newCaptchaText);
+      }}>
+        Refresh
+      </button>
+    </div>
+    
+  );
+};
+
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phoneNumber: '',
     message: '',
+    captchaInput: '',
   });
 
   const [errors, setErrors] = useState({
@@ -20,7 +92,22 @@ const Footer = () => {
     email: '',
     phoneNumber: '',
     message: '',
+    captcha: '',
   });
+
+  const [captchaValid, setCaptchaValid] = useState(false);
+  const [refreshCaptcha, setRefreshCaptcha] = useState(false);
+
+  // Handle input change for form fields
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleCaptchaChange = (input, captchaText) => {
+    setFormData({ ...formData, captchaInput: input });
+    setCaptchaValid(input === captchaText);
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -36,24 +123,28 @@ const Footer = () => {
     if (!formData.message) {
       newErrors.message = 'Message is required';
     }
+    if (!captchaValid) {
+      newErrors.captcha = 'Captcha is incorrect';
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
+    if (!validateForm()) {
+      if (errors.captcha) {
+        alert('Incorrect CAPTCHA. Please try again.');
+        setRefreshCaptcha(prev => !prev);  // Refresh CAPTCHA
+      }
+      return;
+    }
 
     // Sending email to the company
     emailjs.send('service_qxpozg8', 'template_p4peewl', formData, 'uRpPV27yFcPfqX43a')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
-        alert('Message sent to the company successfully');
+        alert('Thanks for contacting us. We will get back to you soon.');
       }, (error) => {
         console.log('FAILED...', error);
         alert('Failed to send message to the company');
@@ -64,8 +155,11 @@ const Footer = () => {
       email: '',
       phoneNumber: '',
       message: '',
+      captchaInput: '',
     });
     setErrors({});
+    setCaptchaValid(false); // Reset captcha validity
+    setRefreshCaptcha(prev => !prev);  // Refresh CAPTCHA
   };
 
   return (
@@ -78,12 +172,12 @@ const Footer = () => {
       <footer className='flex flex-col md:flex-row justify-between items-center'>
         <div className='md:w-1/2 flex items-center justify-center gap-[30px] flex-col text-center md:text-left mb-8 md:mb-0'>
           <div className='flex flex-col items-center justify-center'>
-            <img src={logo4} alt="logo" className="w-[200px] m-5 h-[200px]" />
-            <p className='flex  items-center text-sm md:text-lg justify-center'>
+            <img src={logo4} alt="logo" className="w-[200px]  m-5 h-[200px]" />
+            <p className='md:flex lg:flex hidden   items-center  text-sm md:text-lg justify-center'>
               <HiOutlineMail  style={{ fontSize: "2rem" }} /><b className=' text-sm'>:- </b>  Info@healthandwellbeingcoachingforum.com
             </p>
           </div>
-          <div className='flex items-start justify-center gap-[100px]'>
+          <div className='flex items-start md:flex-row lg:flex-row flex-col justify-center md:gap-[100px] gap-[30px]  lg:gap-[100px]'>
             <div className='flex items-center justify-center flex-col'>
               <h3 className='text-xl font-bold mb-4'>Quick Links</h3>
               <ul className='flex items-center justify-center flex-col'>
@@ -97,14 +191,14 @@ const Footer = () => {
               <h3 className='text-xl font-bold mb-4'>Policies</h3>
               <ul className='flex items-center justify-center flex-col'>
                 <li onClick={()=>{
-                  window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721675262/Policy_c8qhwb.pdf'
+                  window.location.href = '/privacy'
                 }} className="hover:underline">Privacy Policy</li>
                 <li  onClick={()=>{
-                  window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721675262/Policy2_lgvadx.pdf'
+                  window.location.href = '/disclaimer'
                 }}
                  className="hover:underline">Disclaimer Policy</li>
                 <li  onClick={()=>{
-                  window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721675262/Policy3_ipojgz.pdf'
+                  window.location.href = '/refund'
                 }}
                  className="hover:underline">Refund Policy</li>
               </ul>
@@ -157,9 +251,12 @@ const Footer = () => {
               />
               {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
             </div>
+            <Captcha onChange={handleCaptchaChange} refreshCaptcha={refreshCaptcha} />
+            {errors.captcha && <p className="text-red-500 text-sm mt-1">{errors.captcha}</p>}
             <button
               type="submit"
-              className="w-full px-4 py-2 rounded-lg bg-purple-950 text-white">
+              className="w-full px-4 py-2 rounded-lg bg-purple-950 text-white"
+              disabled={!captchaValid}>
               Submit Response
             </button>
           </form>

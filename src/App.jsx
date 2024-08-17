@@ -9,6 +9,9 @@ import Events from './pages/Events'
 import Conference from './pages/Event/Conference'
 import Resources from './pages/Books'
 import ConferenceFee from './components/Conference/Fee'
+import PrivacyPolicy from './pages/Privacy'
+import DisclaimerPolicy from './pages/Disclaimer'
+import RefundPolicy from './pages/Refund'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +34,9 @@ function App() {
       <Route path="*" element={<div>404</div>} />
       <Route path="/resources" element={<Resources/>} />
       <Route path="/checkout" element={<ConferenceFee/>} />
+      <Route path="/privacy" element={<PrivacyPolicy/>} />
+      <Route path="/disclaimer" element={<DisclaimerPolicy/>} />
+      <Route path="/refund" element={<RefundPolicy/>} />
     </Routes>
      
     </>
