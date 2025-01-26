@@ -29,14 +29,14 @@ function App() {
     </div>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/event" element={<Events />} />
-      <Route path="/conference" element={<Conference/>} />
-      <Route path="*" element={<div>404</div>} />
-      <Route path="/resources" element={<Resources/>} />
+      {/* <Route path="/event" element={<Events />} />
+      <Route path="/conference" element={<Conference/>} /> */}
+      <Route path="*" element={<div>404 Not Found</div>} />
+      {/* <Route path="/resources" element={<Resources/>} />
       <Route path="/checkout" element={<ConferenceFee/>} />
       <Route path="/privacy" element={<PrivacyPolicy/>} />
       <Route path="/disclaimer" element={<DisclaimerPolicy/>} />
-      <Route path="/refund" element={<RefundPolicy/>} />
+      <Route path="/refund" element={<RefundPolicy/>} /> */}
     </Routes>
      
     </>

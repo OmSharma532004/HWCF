@@ -178,7 +178,7 @@ const Footer = () => {
             </p>
           </div>
           <div className='flex items-start md:flex-row lg:flex-row flex-col justify-center md:gap-[100px] gap-[30px]  lg:gap-[100px]'>
-            <div className='flex items-center justify-center flex-col'>
+            {/* <div className='flex items-center justify-center flex-col'>
               <h3 className='text-xl font-bold mb-4'>Quick Links</h3>
               <ul className='flex items-center justify-center flex-col'>
                 <li><Link to="/" className='hover:underline'>Home</Link></li>
@@ -186,7 +186,7 @@ const Footer = () => {
                 <li><Link to="/conference" className='hover:underline'>Conference</Link></li>
                 <li><Link to="/resources" className='hover:underline'>Resources</Link></li>
               </ul>
-            </div>
+            </div> */}
             <div className='flex items-center justify-center flex-col'>
               <h3 className='text-xl font-bold mb-4'>Policies</h3>
               <ul className='flex items-center justify-center flex-col'>
